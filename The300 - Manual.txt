@@ -1,0 +1,45 @@
+
+Manual:
+
+
+Controlos do jogo:
+
+A -> Recuar;
+
+D -> Avançar;
+
+S -> Cover (defender estando parado);
+
+Q -> Brace (concede-nos uma defesa maior, por isso recebemos um dano mínimo, e ao mesmo tempo conseguimos empurrar os nossos inimigos mas, em contrapartida ficamos mais lentos);
+
+E -> Charge (concede speed boost mas em contra partida recebemos mais dano porque estamos mais vulneráveis); 
+
+Botão esquerdo do rato -> Atacar; 
+
+Esq -> Pausa para o menu oh/off.
+
+
+
+
+Obejectivo de jogo:
+
+O objecto do jogo/protótipo é chegar ao fim do mapa (nível) sem todos os soldados morrerem, matando todos os inimigos que vão aparecendo no caminho. 
+
+
+
+
+Observações:
+
+- Decidimos realizar o código num fork a parte e juntamente (pessoalmente), fazíamos os scripts, pois alguns membros do grupo não conseguiam utilizar o unit no seu computador então dependiam sempre de outros. Depois enviamos o que cada um fez no código quando já estava tudo composto. Por isso é que foi tudo enviado ao mesmo tempo.
+   
+- Quanto ao AI dos inimigos vamos posteriormente melhorar/simplificar o contudo do código pois esta um pouco extenso. 
+
+- Futuramente iremos também inserir tutorial poups, para o jogador entender melhor como funciona o jogo em si e assim, ir evoluindo mais fluidamente sabendo como utilizar todos os controlos adequadamente. 
+
+- Quanto a bugs o wizard poderá não atacar algumas (poucas) vezes. Os projecteis da wizard não chegam a desaparece no ecrã de jogo. Não aparece GameOver mesmo este estando presente no projeto. O LivesCounter não está sincronizado com a vida atual do jogador. 
+
+- Os placeholders verdes para o exercito do player estão presentes em vez da sprite do player em si 
+
+
+ 
+ 
