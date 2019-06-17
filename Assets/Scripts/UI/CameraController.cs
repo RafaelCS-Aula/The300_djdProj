@@ -26,13 +26,14 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        target = GameObject.Find("Player").transform;
-        return;
     }
 
 
     void LateUpdate()
     {
+        if (target == null)
+            return;
+
         transform.position = new Vector3(Mathf.Clamp((target.position.x + lookAhead), xMin, xMax), Mathf.Clamp((target.position.y - lookAhead), yMin, yMax), transform.position.z);
 
     }

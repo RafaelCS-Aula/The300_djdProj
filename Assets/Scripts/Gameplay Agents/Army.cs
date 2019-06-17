@@ -71,8 +71,8 @@ public class Army : MonoBehaviour
 
     private void Update() 
     {
-        if(atkCooldownTimer < attackCooldown) isAttacking = false;
-        atkCooldownTimer += Time.deltaTime;    
+        //if(atkCooldownTimer < attackCooldown) isAttacking = false;
+        atkCooldownTimer += Time.deltaTime;
     }
     private void FixedUpdate()
     {
@@ -89,7 +89,7 @@ public class Army : MonoBehaviour
         }        
 
         myRb.velocity = movementVect;
-        
+
         if (nTroops <= 0)
         {
             // Lose
@@ -100,13 +100,16 @@ public class Army : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if (GetComponent<Army>().activeFormation.Designation == EnumArmyFormations.Cover)
+            return;
+
         if (damage > defense * defenseModifier)
         {
-        
+            
             nTroops -= (int)(damage);
             // Updates how many guys are following the main object
             
-            followerScript.UpdateFollowers(nTroops);
+            followerScript.UpdatePositions(nTroops);
         }
 
         // knockback
@@ -136,9 +139,6 @@ public class Army : MonoBehaviour
             atkCooldownTimer = 0.0f;
 
         }
-        
-        
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)

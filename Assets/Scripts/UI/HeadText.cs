@@ -20,7 +20,7 @@ public class HeadText : MonoBehaviour
     void Update()
     {
 
-        textmsh.text = $"State: {armyScript.activeFormation.Designation} \n Troops: {armyScript.nTroops}";
+        textmsh.text = $"{armyScript.nTroops}";
 
 
     }
