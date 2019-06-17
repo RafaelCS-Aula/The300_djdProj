@@ -168,7 +168,7 @@ MonoBehaviour:
   possibleFormations:
   - {fileID: 11400000, guid: aedec0f519eab284f949ead5ba336eee, type: 2}
   - {fileID: 11400000, guid: c815d508bfaca0b4abec5ecb36f4a9df, type: 2}
-  minDistanceToCharge: 40
+  minDistanceToCharge: 200
   minDistanceToBrace: 0.5
   chanceToDoNothing: 0.8
   agressiveMod: 0.5
@@ -187,8 +187,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttacking: 0
   enemiesInRange: []
-  nTroops: 20
-  attack: 1
+  nTroops: 80
+  attack: 30
   defense: 2
   speed: -15
   mass: 3
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4264108487751422845}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89e92901794e73f41a28e67be86df59c, type: 3}
   m_Name: 
@@ -346,6 +346,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2199861262927490031}
     m_Modifications:
+    - target: {fileID: 1211809936515652903, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Name
+      value: Formation text
+      objectReference: {fileID: 0}
     - target: {fileID: 1709292067579884192, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -354,7 +359,7 @@ PrefabInstance:
     - target: {fileID: 1709292067579884192, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.7
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1709292067579884192, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
@@ -401,11 +406,32 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1211809936515652903, guid: 26f00aa8778e4364c958049fc99ee36b,
+    - target: {fileID: 2161520278012443484, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
-      propertyPath: m_Name
-      value: Formation text
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 907e52e9f7dbfb2429a68cf8036cb8b8, type: 3}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_FontSize
+      value: 78
       objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Color.rgba
+      value: 4278216447
+      objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 907e52e9f7dbfb2429a68cf8036cb8b8,
+        type: 3}
     - target: {fileID: 6994622453419311030, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
       propertyPath: armyScript

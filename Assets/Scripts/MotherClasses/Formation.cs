@@ -11,6 +11,7 @@ using UnityEngine;
 public class Formation : ScriptableObject
 {
     public EnumArmyFormations Designation;
+
     [Range(0,2)]
     public float SpeedModifier = 1;
 

@@ -15,12 +15,13 @@ public abstract class Controller : MonoBehaviour
     [SerializeField]protected  List<Formation> possibleFormations = new List<Formation>();
 
     // Keep a reference to all the formation scriptable objects
-    protected Formation charge = null;
-    protected  Formation brace = null;
-    protected Formation cover = null;
-    protected Formation march = null;
-    protected Formation idle = null;
-
+    internal Formation charge = null;
+    internal Formation brace = null;
+    internal Formation cover = null;
+    internal Formation march = null;
+    internal Formation idle = null;
+    internal Formation attack = null;
+        
     private void Awake() 
     {
         foreach (Formation f in possibleFormations)
@@ -30,18 +31,22 @@ public abstract class Controller : MonoBehaviour
             else if(f.Designation.Equals(EnumArmyFormations.Cover)) cover = f;
             else if(f.Designation.Equals(EnumArmyFormations.March)) march = f;
             else if(f.Designation.Equals(EnumArmyFormations.Idle)) idle = f;
-
+            else if (f.Designation.Equals(EnumArmyFormations.Attack)) attack = f;
         }
 
         armyScript.activeFormation = possibleFormations[0];
     }
+
     public abstract Formation ChooseFormation();
 
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
         Formation c = ChooseFormation();
-        if (c != null) armyScript.activeFormation = c;
+        if (c == null)
+            return;
+
+        armyScript.activeFormation = c;
         
     }
 }

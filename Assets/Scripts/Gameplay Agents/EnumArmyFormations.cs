@@ -11,5 +11,6 @@ public enum EnumArmyFormations
        March,
        Cover,
        Charge,
-       Idle
+       Idle,
+       Attack
 }

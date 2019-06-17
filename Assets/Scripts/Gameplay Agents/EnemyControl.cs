@@ -12,6 +12,7 @@ using UnityEngine;
 /// </summary>
 class EnemyControl : Controller
 {
+    float timer = 0;
     [SerializeField]
     float minDistanceToCharge;
     [SerializeField]
@@ -54,7 +55,6 @@ class EnemyControl : Controller
         if (brace != null) CalculateChanceToBrace();
         if (charge != null) CalculateChanceToCharge();
         return CalculateNextState();
-
     }
 
     void CalculateChanceToBrace()
@@ -93,7 +93,7 @@ class EnemyControl : Controller
 
     Formation CalculateNextState()
     {
-        // Calculates chance to attack, stops the army to do so
+        /*// Calculates chance to attack, stops the army to do so
         if(armyScript.enemiesInRange.Count > 0)
         {
             float a = Random.Range(0, 1);
@@ -156,12 +156,27 @@ class EnemyControl : Controller
             }
 
             sum -= chanceList[i];
-        }
+        }*/
 
+        float NextState = Random.Range(0, 100);
+        if (NextState > 90 && timer > 0.2)
+        {
+            timer = 0;
+            Formation f = possibleFormations[Random.Range(0, possibleFormations.Count)];
+            if (f.Designation == EnumArmyFormations.Attack)
+                armyScript.Attack();
+            return f;
+        }
         // by default just don´t change formation
 
         return armyScript.activeFormation;
 
     }
 
+    protected  override void Update()
+    {
+        base.Update();
+
+        timer += Time.deltaTime;
+    }
 }

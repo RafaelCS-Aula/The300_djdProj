@@ -22,30 +22,25 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Time.time >nextSpawn)
         {
-            whatToSpawn = Random.Range(1, 6);
+            whatToSpawn = Random.Range(0, 6);
             //Debug.Log(whatToSpawn);
 
             switch (whatToSpawn)
             {
+                case 0:
+                    lastSpawnedEnemy = Instantiate(enemy1, transform.position, Quaternion.identity);
+                    break;
+
                 case 1:
-                    enemyToSpawn = enemy1;
+                    lastSpawnedEnemy = Instantiate(enemy2, transform.position, Quaternion.identity);
                     break;
 
-                case 2:
-                    enemyToSpawn = enemy2;
-                    break;
-
-                case 3:
-                    enemyToSpawn = enemy3;
+                default:
+                    lastSpawnedEnemy = Instantiate(enemy3, transform.position, Quaternion.identity);
                     break;
             }
 
-            lastSpawnedEnemy = 
-            Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
-            lastSpawnedEnemy.GetComponent<EnemyControl>().playerReference = 
-            playerObjectReference;
-
-            
+            lastSpawnedEnemy.GetComponent<EnemyControl>().playerReference = FindObjectOfType<PlayerControl>().gameObject;
 
             nextSpawn = Time.time + spawnRate;
         }

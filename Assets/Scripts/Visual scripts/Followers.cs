@@ -24,24 +24,31 @@ public class Followers : MonoBehaviour
     float followerSpacing;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
+        aScript = GetComponent<Army>();
         followPositions = new Vector3[aScript.nTroops];
 
+        UpdatePositions(aScript.nTroops);
         UpdateFollowers(aScript.nTroops);
+    }
+
+    public void UpdatePositions(int troops)
+    {
+        if (followPositions == null)
+            followPositions = new Vector3[troops];
+
+        for (int i = 0; i < followPositions.Length; i++)
+        {
+            followPositions[i] = new Vector3(0, 0, 0);
+            followPositions[i].x = trailLength / troops * (i + 1);
+        }
     }
 
     // Update is called once per frame
     public void UpdateFollowers(int troops)
     {
-        for (int i = 0; i < followPositions.Length; i++)
-        {
-            followPositions[i] = new Vector3(0,0,0);
-            followPositions[i].x = trailLength / troops * (i + 1);
-        }
-
-
-        for (int i = 0; i < amountToShow; i++)
+        for (int i = 0; i < amountToShow && i < troops; i++)
         {
             float dir = Mathf.Sign(aScript.speed);
             float spawnX = (transform.position.x - followPositions[i].x) * dir;
@@ -53,10 +60,6 @@ public class Followers : MonoBehaviour
 
             // this needs to be here or the sprites for the player followers get all messed up I dont even know
             currObj.transform.localScale = new Vector3(0.125f,0.125f,1);
-            
-
         }
-       
-
     }
 }

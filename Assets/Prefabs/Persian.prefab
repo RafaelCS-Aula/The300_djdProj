@@ -137,7 +137,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: -17.228462, y: 0}
   m_SpriteTilingProperty:
@@ -168,6 +168,7 @@ MonoBehaviour:
   possibleFormations:
   - {fileID: 11400000, guid: c815d508bfaca0b4abec5ecb36f4a9df, type: 2}
   - {fileID: 11400000, guid: 5c8fa25eda4f5994da51801ad81c805d, type: 2}
+  - {fileID: 11400000, guid: 8b3ccc9f26e730149b90540d7531ec42, type: 2}
   minDistanceToCharge: 200
   minDistanceToBrace: 4
   chanceToDoNothing: 0.1
@@ -188,7 +189,7 @@ MonoBehaviour:
   isAttacking: 0
   enemiesInRange: []
   nTroops: 20
-  attack: 300
+  attack: 10
   defense: 1
   speed: -20
   mass: 2
@@ -201,7 +202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4168459224304794717}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 89e92901794e73f41a28e67be86df59c, type: 3}
   m_Name: 
@@ -250,7 +251,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -330,7 +331,7 @@ Animator:
   m_GameObject: {fileID: 4168459224304794717}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ee1a48f370af28a4189e17e669e4ce04, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -359,7 +360,7 @@ PrefabInstance:
     - target: {fileID: 1709292067579884192, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27.7
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1709292067579884192, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
@@ -405,6 +406,42 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2161520278012443484, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 907e52e9f7dbfb2429a68cf8036cb8b8, type: 3}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_FontSize
+      value: 78
+      objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Color.rgba
+      value: 4278216447
+      objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 907e52e9f7dbfb2429a68cf8036cb8b8,
+        type: 3}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_Text
+      value: asdasdsadasdasd
+      objectReference: {fileID: 0}
+    - target: {fileID: 480129189793493615, guid: 26f00aa8778e4364c958049fc99ee36b,
+        type: 3}
+      propertyPath: m_RichText
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6994622453419311030, guid: 26f00aa8778e4364c958049fc99ee36b,
         type: 3}
